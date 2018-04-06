@@ -19,7 +19,6 @@ public class Main {
 		Ratings myRating = new Ratings();
 		String[] skillRatings = {"n/a", "beginner", "exceptional", "great", "advance", "expert"};
 
-//myRating will equal the number the user inputs. Therefor the rating must be an int so the user can expect an integer taht represent the element for skillRatings.
 
 		//Contact Information (store in an array list?)
 		System.out.println('\n' + design + '\n');
