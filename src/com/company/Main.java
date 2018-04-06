@@ -14,7 +14,7 @@ public class Main {
 		Skills forGeneralSkills;
 //		int myRatings;
 		String design = "************************************" + '\n'; //for formatting purposes
-		String[] generalSkills = {"Customer Service", "Computer Operations", "Basics IT Functions", "Microsoft Office"};
+//		String[] generalSkills = {"Customer Service", "Computer Operations", "Basics IT Functions", "Microsoft Office"};
 		int i;
 		Ratings myRating = new Ratings();
 		String[] skillRatings = {"n/a", "beginner", "exceptional", "great", "advance", "expert"};
