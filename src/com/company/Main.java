@@ -1,6 +1,5 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,13 +10,14 @@ public class Main {
 		String input;
 		Experience workHistory;
 		Education schooling;
-		Skills expertise = new Skills();
+		Skills expertise;
 		Skills forGeneralSkills;
-		int myRatings;
-//		int i = 0;
+//		int myRatings;
 		String design = "************************************" + '\n'; //for formatting purposes
 		String[] generalSkills = {"Customer Service", "Computer Operations", "Basics IT Functions", "Microsoft Office"};
-		String[] skillRatings = {"beginner", "exceptional", "great", "advance", "expert"};
+		int i;
+		Ratings myRating = new Ratings();
+		String[] skillRatings = {"n/a", "beginner", "exceptional", "great", "advance", "expert"};
 
 //myRating will equal the number the user inputs. Therefor the rating must be an int so the user can expect an integer taht represent the element for skillRatings.
 
@@ -125,36 +125,20 @@ public class Main {
 		if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
 
 			for(int x=1; x <5; x++) {
-				/*expertise = new Skills();*/
+				expertise = new Skills();
 				System.out.print("What are your technical skills? ");
 				expertise.setTechnical(sc.nextLine());
 				System.out.print("How would you rate these skills from 1 to 5? ");
 				input = sc.nextLine();
-					if (input.equals(skillRatings)) {
-						expertise.setRating(sc.nextInt());
-					}
+				i = Integer.parseInt(input);
+				myRating.setRate(skillRatings[i]);
 				System.out.print("What are your soft skills? ");
 				expertise.setSoft(sc.nextLine());
 				System.out.print("How would you rate these skills from 1 to 5? ");
 				input = sc.nextLine();
-				if (input.equals(skillRatings)) {
-					expertise.setRating(sc.nextInt());
-				}
-/*				for(int i = 0; i < skillRatings.length; i++) {
-					myRatings = String.valueOf(i);
-					if(myRatings.equals(i)) {
-						expertise.setRating(sc.nextLine());
-						//continue;
-					}*/
+				i = Integer.parseInt(input);
+				myRating.setRate(skillRatings[i]);
 
-
-	//			expertise.setRating(sc.nextLine());
-
-/*				for(int i = 0; i < skillRatings.length; i++) {
-					if(input.equalsIgnoreCase(expertise.setRating(i)){
-
-					}
-				}*/
 				skills.add(expertise);
 
 				System.out.print("Do you any additional skills? (Y/N) ");
@@ -195,34 +179,11 @@ public class Main {
 			System.out.print(eachEducation.educationInfo());
 		}
 		for (Skills eachSkills: skills) {
-			System.out.print(eachSkills.skillsInfo());
+			System.out.print("My skill level is " + myRating.thisIsMyRating() + " in " + eachSkills.technicalSkills() + '\t');
+			System.out.print('\n');
+			System.out.print("My skill level is " + myRating.thisIsMyRating() + " in " + eachSkills.softSkills() + '\t');
 		}
 
-/*		System.out.print("What is your full name? ");
-		String fullName = sc.nextLine();
-		System.out.print("What is your phone number? ");
-		String phoneNumber = sc.nextLine();
-		System.out.print("What is your email Address? ");
-		String emailAddress = sc.nextLine();*/
-
-		//Work Experience (Create an array list that collects the user's work experience.)
-/*		System.out.print("Do you have any professional work experience? ");
-		String experience = sc.nextLine();*/
-/*		System.out.print("Do you have any more work experience? (Y/N) ");
-		input = sc.next();
-		if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
-			System.out.print("List work experience:");
-		}*/
-
-/*		System.out.print(contactInfo());
-		System.out.print('\n'+'\n'+experience);*/
-
-
-
-		/*String design = "*";
-		for(int x = 1; x <15; x++){
-			System.out.println(design);
-		}*/
 
     }
 }

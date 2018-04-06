@@ -16,8 +16,13 @@ public class Skills {
         this.rating = rating;
     }
 
-    public String skillsInfo(){
-        return '\n' + "I am [an] " + getRating()+ " at " + getTechnical() + '\n' + "My skill level is " + getRating() + " at " + getSoft() + '\n' + getGeneral();
+
+    public String technicalSkills(){
+        return technical + '\t';
+    }
+
+    public String softSkills(){
+        return soft + '\t';
     }
 
     public String getTechnical() {
