@@ -11,7 +11,15 @@ public class Main {
 		String input;
 		Experience workHistory;
 		Education schooling;
+		Skills expertise = new Skills();
+		Skills forGeneralSkills;
+		int myRatings;
+//		int i = 0;
 		String design = "************************************" + '\n'; //for formatting purposes
+		String[] generalSkills = {"Customer Service", "Computer Operations", "Basics IT Functions", "Microsoft Office"};
+		String[] skillRatings = {"beginner", "exceptional", "great", "advance", "expert"};
+
+//myRating will equal the number the user inputs. Therefor the rating must be an int so the user can expect an integer taht represent the element for skillRatings.
 
 		//Contact Information (store in an array list?)
 		System.out.println('\n' + design + '\n');
@@ -109,6 +117,72 @@ public class Main {
 		}
 		System.out.println('\n' + design + '\n');
 
+		//Skills
+		ArrayList<Skills> skills = new ArrayList<>();
+
+		System.out.print("Do you have any skills? (Y/N) ");
+		input = sc.nextLine();
+		if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+
+			for(int x=1; x <5; x++) {
+				/*expertise = new Skills();*/
+				System.out.print("What are your technical skills? ");
+				expertise.setTechnical(sc.nextLine());
+				System.out.print("How would you rate these skills from 1 to 5? ");
+				input = sc.nextLine();
+					if (input.equals(skillRatings)) {
+						expertise.setRating(sc.nextInt());
+					}
+				System.out.print("What are your soft skills? ");
+				expertise.setSoft(sc.nextLine());
+				System.out.print("How would you rate these skills from 1 to 5? ");
+				input = sc.nextLine();
+				if (input.equals(skillRatings)) {
+					expertise.setRating(sc.nextInt());
+				}
+/*				for(int i = 0; i < skillRatings.length; i++) {
+					myRatings = String.valueOf(i);
+					if(myRatings.equals(i)) {
+						expertise.setRating(sc.nextLine());
+						//continue;
+					}*/
+
+
+	//			expertise.setRating(sc.nextLine());
+
+/*				for(int i = 0; i < skillRatings.length; i++) {
+					if(input.equalsIgnoreCase(expertise.setRating(i)){
+
+					}
+				}*/
+				skills.add(expertise);
+
+				System.out.print("Do you any additional skills? (Y/N) ");
+				input = sc.nextLine();
+				if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+					continue;
+				} else if (input.equalsIgnoreCase("N") || input.equalsIgnoreCase("No")) {
+					break;
+				}
+			}
+/*
+			//Listing pre-typed general skills
+			for (int x = 0; x < generalSkills.length; x++) {
+				forGeneralSkills = new Skills();
+				System.out.print("Do you have this skill? (Y/N) " + generalSkills[x] + " ");
+				input = sc.nextLine();
+				if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+					forGeneralSkills.setGeneral(generalSkills[x]);
+					skills.add(forGeneralSkills);
+					continue;
+				} else if (input.equalsIgnoreCase("N") || input.equalsIgnoreCase("No")){
+					continue;
+				}
+			}*/
+
+
+		}
+
 
 		//The Resume
 		System.out.println('\n'+ design + '\n');
@@ -119,6 +193,9 @@ public class Main {
 		}
 		for (Education eachEducation: education) {
 			System.out.print(eachEducation.educationInfo());
+		}
+		for (Skills eachSkills: skills) {
+			System.out.print(eachSkills.skillsInfo());
 		}
 
 /*		System.out.print("What is your full name? ");

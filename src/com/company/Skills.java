@@ -4,6 +4,21 @@ public class Skills {
     private String technical;
     private String soft;
     private String general;
+    private int rating;
+
+    public Skills() {
+    }
+
+    public Skills(String technical, String soft, String general, int rating) {
+        this.technical = technical;
+        this.soft = soft;
+        this.general = general;
+        this.rating = rating;
+    }
+
+    public String skillsInfo(){
+        return '\n' + "I am [an] " + getRating()+ " at " + getTechnical() + '\n' + "My skill level is " + getRating() + " at " + getSoft() + '\n' + getGeneral();
+    }
 
     public String getTechnical() {
         return technical;
@@ -27,5 +42,13 @@ public class Skills {
 
     public void setGeneral(String general) {
         this.general = general;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }
