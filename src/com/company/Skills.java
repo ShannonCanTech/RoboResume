@@ -1,15 +1,20 @@
 package com.company;
 
 public class Skills {
-    private String technical;
-    private String soft;
+/*    private String technical;
+    private String soft;*/
     private String general;
     private int rating;
 
     public Skills() {
     }
 
-    public Skills(String technical, String soft, String general, int rating) {
+    public Skills(String general, int rating) {
+        this.general = general;
+        this.rating = rating;
+    }
+
+/*    public Skills(String technical, String soft, String general, int rating) {
         this.technical = technical;
         this.soft = soft;
         this.general = general;
@@ -39,7 +44,7 @@ public class Skills {
 
     public void setSoft(String soft) {
         this.soft = soft;
-    }
+    }*/
 
     public String getGeneral() {
         return general;

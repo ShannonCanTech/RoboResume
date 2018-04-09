@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String input;
+		boolean done = false;
 		Experience workHistory;
 		Education schooling;
 		Skills expertise;
@@ -66,9 +67,9 @@ public class Main {
 				System.out.print("Do you have any more work experience? (Y/N)");
 				input = sc.nextLine();
 				if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
-					continue;
+					done = false;
 				} else if (input.equalsIgnoreCase("N") || input.equalsIgnoreCase("No")) {
-					break;
+					done = true;
 				}
 
 			}
@@ -108,13 +109,13 @@ public class Main {
 				System.out.print("Do you any additional educational history? (Y/N) ");
 				input = sc.nextLine();
 				if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
-					continue;
+					done = false;
 				} else if (input.equalsIgnoreCase("N") || input.equalsIgnoreCase("No")) {
-					break;
+					done = true;
 				}
 			}
 		}
-		System.out.println('\n' + design + '\n');
+		/*System.out.println('\n' + design + '\n');
 
 		//Skills
 		ArrayList<Skills> skills = new ArrayList<>();
@@ -125,46 +126,26 @@ public class Main {
 
 			for(int x=1; x <5; x++) {
 				expertise = new Skills();
-				System.out.print("What are your technical skills? ");
-				expertise.setTechnical(sc.nextLine());
+				System.out.print("Enter skills: ");
+				expertise.setGeneral(sc.nextLine());
 				System.out.print("How would you rate these skills from 1 to 5? ");
 				input = sc.nextLine();
 				i = Integer.parseInt(input);
 				myRating.setRate(skillRatings[i]);
-				System.out.print("What are your soft skills? ");
-				expertise.setSoft(sc.nextLine());
-				System.out.print("How would you rate these skills from 1 to 5? ");
-				input = sc.nextLine();
-				i = Integer.parseInt(input);
-				myRating.setRate(skillRatings[i]);
-
 				skills.add(expertise);
 
 				System.out.print("Do you any additional skills? (Y/N) ");
 				input = sc.nextLine();
 				if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
-					continue;
+					done = false;
 				} else if (input.equalsIgnoreCase("N") || input.equalsIgnoreCase("No")) {
-					break;
+					done = true;
 				}
 			}
-/*
-			//Listing pre-typed general skills
-			for (int x = 0; x < generalSkills.length; x++) {
-				forGeneralSkills = new Skills();
-				System.out.print("Do you have this skill? (Y/N) " + generalSkills[x] + " ");
-				input = sc.nextLine();
-				if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
-					forGeneralSkills.setGeneral(generalSkills[x]);
-					skills.add(forGeneralSkills);
-					continue;
-				} else if (input.equalsIgnoreCase("N") || input.equalsIgnoreCase("No")){
-					continue;
-				}
-			}*/
 
 
-		}
+
+		}*/
 
 
 		//The Resume
@@ -177,11 +158,10 @@ public class Main {
 		for (Education eachEducation: education) {
 			System.out.print(eachEducation.educationInfo());
 		}
-		for (Skills eachSkills: skills) {
-			System.out.print("My skill level is " + myRating.thisIsMyRating() + " in " + eachSkills.technicalSkills() + '\t');
+/*		for (Skills eachSkills: skills) {
+			System.out.print(eachSkills.getGeneral()+ "\n" + myRating.thisIsMyRating() + '\t');
 			System.out.print('\n');
-			System.out.print("My skill level is " + myRating.thisIsMyRating() + " in " + eachSkills.softSkills() + '\t');
-		}
+		}*/
 
 
     }
